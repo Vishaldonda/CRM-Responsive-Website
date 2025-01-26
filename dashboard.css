@@ -1,0 +1,927 @@
+*{
+    box-sizing: border-box; /*The width and height of an element include its padding and border.*/
+}
+
+html{
+    font-size: 1rem /*font-size: 100%; /* 1rem = 16px */
+}
+
+
+body{
+    display: flex;
+    margin: 0px auto; /* Center-aligns content */
+    /* max-width: 1440px; reduce over stratchign above 1440px  */
+    min-height: 1310px;
+    -webkit-font-smoothing: antialiased; 
+    font-family: "Nunito Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.layout-container{
+    display: flex;
+    gap:  1.875rem;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 1.25rem; 
+    background: #F4F9FD;
+    overflow: auto;
+}
+
+.left-container{
+    width: 12.5rem;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-right: 1rem;
+    border-radius: 1.5rem;    
+}
+
+.right-container{
+    width: 71.875rem;
+    background-color: #F4F9FD;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+    overflow: auto;
+}
+
+/* left container layout */
+
+.dashboard-contents, .dashboard-index{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.875rem; /* 30px */
+}
+
+.dashboard-index{
+    gap: 2.625rem; /* 42px */
+}
+
+.dashboard-icon svg{
+    width: 3.125rem;
+    height: 3.125rem;
+}
+
+.dashboard-contents-header{
+    display: inline-flex;
+    font-weight: 600;
+    gap :0.875rem;
+    /* color: #7D8592; */
+    color : rgba(125, 133, 146, 1);
+}
+.dashboard-contents-text{
+    display: inline-flex;
+    font-weight: 600;
+    gap :0.875rem;
+    /* color: #7D8592; */
+    color : rgba(125, 133, 146, 1);
+    padding-left: 0.625rem;
+    cursor: pointer;
+}
+
+.color-blue{
+    font-weight: 700;
+    /* color: #3F8CFF; */
+    color : rgba(63, 140, 255, 1)
+}
+
+
+.active-index{
+    background-color: #F4F9FD;
+    border-radius: 0.625rem;
+    display: inline-flex;
+    gap: 1rem; /* 16px */
+    width: 93%;
+    padding: 0.625rem 0 0.625rem 0.5rem;
+    cursor: pointer;
+}
+
+.active-index-bar{        
+    position: absolute;
+    left: 97.83%;
+    right: 0%;
+    top: 0%;
+    bottom: 87.71%;
+
+    background: #3F8CFF;
+    border-radius: 1.5rem;
+}   
+
+.hightlight-text{
+    position: relative;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: space-between;
+}
+
+.dashboard-support{
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+    width: 10.5rem;
+    height: 13.375rem;
+    align-items: center;
+    text-align: center;
+}
+
+.dashboard-support svg{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* right container */
+
+.dashboard-header-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-search{
+    background: #FFFFFF;
+    box-shadow: 0px 6px 58px rgba(196, 203, 214, 0.103611);
+    border-radius: 1.5rem; /* 14px */
+    padding: 0.625rem; /* 10px */
+    gap: 0.625rem; /* 10px */
+    width: 25.75rem; /* 412px */
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+
+.placeholder{
+    font-weight: 400;
+    color: #7D8592;
+}
+
+.header-profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.bell{
+    background-color: #FFFFFF;
+    padding: 0.4375rem; /* 7px */
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px; /* 48px */
+    height: 48px; /* 48px */
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    gap: 12px;
+    color: #0A1629;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    padding: 0.625rem; /* 10px */
+    border-radius: 1.5rem;
+}
+
+/* dashboard */
+
+.dashboard{
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+.dashboard-header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0.625rem;
+}
+
+.dashboard-header-left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboard-body{
+    display: flex;
+    justify-content: space-between;
+    gap: 12px; 
+}
+
+.dashboard-profiles{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 68%;
+    background-color: #FFFFFF;
+    border-radius: 1.5rem;
+}
+
+.dashboard-profiles-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1.75rem 1.5rem 0rem 1.875rem;
+}
+
+
+/* Workload */
+
+.workload, .nearest-events{    
+    font-weight: 700;
+    font-size: 22px;
+    color: #0A1629;
+}
+
+/* View all */
+
+.view-all{
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+    color: #3F8CFF;
+}
+
+
+
+.dashboard-profiles-wrapper{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem; /* 16px */
+    padding: 0.5rem 1.125rem 1rem 1.125rem;
+}
+
+.profile-pic{
+    border-radius: 1.5rem;
+    width: 50px;
+    height: 50px;
+}
+
+/* Shawn Stone */
+
+.dashboard-profiles-person{
+    /* width: 100%; */
+    min-width: 150px;
+    max-width: 174px;
+    max-height: 180px;
+    display: flex;
+    flex-direction: column;
+    background-color: #F4F9FD;
+    border-radius: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    padding: 1.0625rem 1rem 1.125rem 1rem; /* 17px, 16px, 18px 16px */
+}
+
+
+.dashboard-profiles-person .name{
+    font-weight: 700;
+    font-size: 16px;
+    color: #0A1629;
+    text-align: center;
+    margin-top: 18px;
+    margin-bottom: 1px;
+}
+
+.dashboard-profiles-person .designation{
+    /* UI/UX Designer */
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    color: #0A1629;
+    margin-bottom: 12px;
+}
+
+.dashboard-profiles-person .experience{
+    font-weight: 600;
+    font-size: 0.75rem; /* 12px */
+    padding: 0.125rem 0.25rem; /* 2px, 4px */
+    color: #7D8592;
+    border: 1px solid #7D8592;
+    border-radius: 1.5rem
+}
+
+
+
+/* dashboard events */
+.dashboard-events{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem; /* 12px */
+    padding: 1.25rem; /* 20px */
+    width: 29.5%;
+    height: 100%;
+    background-color: #FFFFFF;
+    border-radius: 1.5rem;
+}
+
+.dashboard-events-header{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    padding-top: 4px;
+}
+
+.dashboard-events-occasion{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.event-content{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: all 0.3s ease;
+}
+
+
+.event-title{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0A1629;
+}
+
+.event-time{
+    display: flex;
+    justify-content: space-between;
+    color: #91929E;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.event-1{  
+    border-left: 4px solid #3F8CFF;  
+    padding-left: 1rem;
+}
+
+.event-2, .event-3{
+    border-left: 4px solid #DE92EB;
+    padding-left: 1rem; 
+}
+
+
+
+
+.welcome-message{
+    font-weight: 400;
+    color: #7D8592;
+}
+
+.heading-dashboard{
+    font-weight: 700;
+    font-size: 2rem;
+    color: #0A1629;
+}
+
+.dashboard-header-right{
+    display: flex;
+    align-items: flex-end;
+}
+.dashboard-header-right button{
+    display: inline-flex;
+    border: none;
+    border-radius: 0.625rem;
+    background: #E6EDF5;
+    padding: 0.625rem 1rem;
+    align-items: center; 
+    gap: 8px;
+    cursor: pointer;
+}
+.calender-button{
+    font-weight: 400;
+    color: #0A1629;
+    font-family: "Nunito Sans";
+}
+
+/* cursor-pointer */
+
+.bell, .view-all, .pointer{
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+
+.view-all:hover, .view-more:hover {
+    color: #1A6BBE; /* Darker shade of blue for hover effect */
+    transform: scale(1.05); /* Slight scale effect for hover */
+}
+
+.view-all:hover svg ,.view-more:hover svg{
+    transform: translateX(5px); /* Move the icon slightly on hover */
+}
+
+/* Styling for pointer class (if it's used anywhere else) */
+.pointer:hover {
+    opacity: 0.8; /* Slight fade effect on hover */
+}
+
+/* dashboard-activity */
+
+.dashboard-activity, .activity-stream, .activity-profile-details, .activity-stream-profiles{
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-stream{
+    gap: 1.5rem;
+}
+
+.profile-second{
+    margin-top: 6px;
+}
+
+.view-more{
+    color: #3F8CFF;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center; /* Centers the element horizontally */
+    align-items: center; 
+}
+
+.dashboard-activity-heading{
+    color: #0A1629;
+    font-size: 1.375rem;
+    font-weight: 700;
+    padding-left: 0.625rem;
+}
+
+.activity-stream-profiles{
+    gap: 1.25rem;
+}
+
+.activity-profile{
+    display: flex;
+    gap: 0.75rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.activity-profile-name{
+    color: #0A1629;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.activity-profile-designation{
+    color: #91929E;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.activity-update{
+    display: inline-flex;
+    align-items: center;
+    align-items: flex-start;
+    gap: 0.625rem; 
+    color: #0A1629;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1.125rem;
+    margin-bottom: 1rem;
+    background: #F4F9FD;
+    padding: 0.875rem;
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.activity-update svg {
+    width: 1.5rem; 
+    height: 1.5rem; 
+    flex-shrink: 0; 
+}
+
+.activity-update-secondary{
+    color: #0A1629;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 1.125rem;
+    padding: 0.875rem;
+    width: 100%;
+    gap: 0.625rem;
+    border-radius: 1.5rem;
+    background: #F4F9FD;
+    margin-bottom: 1.375rem;
+    display: inline-flex;
+    align-items: center;
+    align-items: flex-start;
+}
+
+.activity-update-secondary svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.right-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.layout-container::-webkit-scrollbar {
+    display: none; 
+} 
+
+
+.activity-attachments{
+    display: inline-flex;
+    gap: 0.625rem;
+    align-items: flex-start; 
+    color: #0A1629;
+    font-size: 1rem;
+    font-weight: 400;
+    background: #F4F9FD;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.activity-attachments svg {
+    width: 1.5rem; 
+    height: 1.5rem;
+    flex-shrink: 0; 
+}
+
+
+/* project CSS */
+
+.projects-and-activity{
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem; 
+}
+
+.dashboard-projects{
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 68%;
+    background-color: #F4F9FD;
+    border-radius: 1.5rem;
+}
+
+.dashboard-activity{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 29.5%;
+    background-color: #FFFFFF;
+    border-radius: 1.5rem;
+    padding: 1.875rem 1.5rem 1.75rem 1.5rem;
+}
+
+.project-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0.5rem;
+    padding-left: 0.625rem;
+}
+
+.project-heading{
+    color: #0A1629;
+    font-size: 1.375rem;
+    font-weight: 700;
+}
+
+.project-cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.project-card{
+    display: flex;
+    justify-content: space-between;
+    gap:0.625rem;
+    background-color: #FFFFFF;
+    border-radius: 1.5rem;
+    /* padding: 28px; */
+    transition: all 0.3s ease;
+}
+
+.project-details{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 50%;
+    border-right: 3px solid #F4F9FD;
+    padding: 28px;
+    transition: border-right 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-title{
+    display: flex;
+    gap: 0.75rem;
+}
+
+.id-and-category{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-id{
+    color: #91929E;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.project-category{
+    color: #0A1629;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.project-created{
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-calender{
+    display: flex;
+    justify-content: space-between;
+    color: #7D8592;
+    font-size: 0.875rem;
+    font-weight: 600;
+    gap: 10px;
+}
+
+/* project data */
+
+.project-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+}
+
+.project-data-heading{
+    color: #0A1629;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.task-details{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-tasks{
+    display: flex;
+    justify-content: space-between;
+    width: 58%;
+}
+
+.all-tasks, .active-tasks{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.all-tasks-heading, .active-tasks-heading{
+    color: #91929E;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.all-tasks-count, .active-tasks-count{
+    color: #0A1629;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+
+/* project css end */
+
+/* media queries */
+
+
+@media (max-width: 1310px) {
+    .dashboard-body{
+        flex-direction: column; 
+        gap: 2rem;
+    }
+
+    .dashboard-profiles{
+        width: 100%;
+    }
+
+    .dashboard-events{
+        width: 100%;
+    }
+    .dashboard-events-occasion{
+        flex-direction: row;
+        width: 100%;
+        gap: 1.5rem;
+        /* flex-wrap: wrap; */
+    }
+    .event-title, .event-time{
+        gap: 1.5rem;
+    }
+
+    .projects-and-activity{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dashboard-projects, .dashboard-activity, .project-cards{
+        width: 100%;
+    }
+
+    .activity-stream-profiles{
+        flex-direction: row;
+    }
+
+    .profile-first{
+        width: 50%;
+    }
+
+    
+    .profile-second{
+        margin-top: 0px;
+    }
+
+}
+
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 0.875rem; 
+    }
+}
+
+@media (max-width: 860px) {
+    .header-search {
+        width: 50%
+    }
+    .profile-first{
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px){
+    .bell{
+        display: none;
+    }
+    .activity-stream-profiles{
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .profile-first{
+        width: 100%;
+    }
+    .project-card{
+        flex-direction: column ;
+    }
+    .project-details, .project-data{
+        width: 100%;
+        border-bottom: 3px solid #F4F9FD;
+    }
+    .dashboard-events-occasion{
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 650px){
+    .dashboard-header{
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+
+@media (max-width: 600px){
+    .header-search {
+        width: 40%;
+    }   
+    .header-profile {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 590px){
+    .header-search {
+        width: 80%;
+    }   
+    .header-profile {
+        display: none;
+    }
+}
+
+/* remainings */
+
+
+
+
+/* effects */
+
+.dashboard-header-right button:hover {
+    background: #D1D8E6;/* Slightly darker shade for hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.dashboard-contents-text, .hightlight-text, .dashboard-support {
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.dashboard-contents-text:hover{
+    background-color: #F4F9FD; 
+    padding-left: 0.75rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+}
+
+.dashboard-support:hover{
+    padding-top: 0.5rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+.hightlight-text:hover{
+    background-color: #F4F9FD; 
+    padding-left: 1rem;
+    border-radius: 1.5rem;
+}
+
+
+/* Hover effect for the logout button */
+.log-out:hover {
+    background-color: #F4F9FD; /* Light background color */
+    color: #FF5C8D; /* Change text color to a noticeable red for logout */
+    transform: scale(1.05); /* Slightly scale the element */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow to give depth */
+}
+
+/* Icon changes with hover */
+.log-out svg {
+    transition: transform 0.3s ease, fill 0.3s ease; /* Smooth transition for icon */
+}
+
+.log-out:hover svg path {
+    fill: #FF5C8D; /* Change the color of the icon */
+    transition: transform 0.3s ease; /* Smooth transition for color and movement */
+}
+
+.log-out:hover svg {
+    transform: translateX(5px); /* Move the icon slightly to the right */
+    transition: transform 0.3s ease; /* Smooth transition for the movement */
+}
+
+.dashboard-profiles-person:hover,.project-card:hover, .activity-profile:hover{
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.1), 0 6px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+}
+
+.activity-profile:hover{
+    padding: 1rem;
+}
+
+.activity-update:hover,.activity-update-secondary,.activity-attachments{
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.1), 0 6px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
+}
+
+.activity-update:hover,.activity-update-secondary:hover,.activity-attachments:hover{
+    padding: 1rem;
+}
+
+
+
+.event-content:hover .event-time {
+    color: rgba(70, 80, 90, 1); /* Darker shade for the event time */
+    font-weight: 600; /* Slightly bolder font */
+    transition: color 0.1s ease;
+    color:#3F8CFF ; /* Smooth text transition */
+}
+
+.header-search:hover, .header-profile:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover */
+    border: #C5D8E8; /* Slightly darker border */
+}
