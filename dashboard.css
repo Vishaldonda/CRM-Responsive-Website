@@ -12,6 +12,7 @@ body{
     margin: 0px auto; /* Center-aligns content */
     /* max-width: 1440px; reduce over stratchign above 1440px  */
     min-height: 1310px;
+    background: #F4F9FD;
     -webkit-font-smoothing: antialiased; 
     font-family: "Nunito Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
@@ -833,6 +834,28 @@ body{
     .header-profile {
         display: none;
     }
+}
+
+
+/* large screen - in general */
+
+@media (min-width: 1330px){
+    .body{
+        width: 100%;
+    }
+
+    .layout-container{
+        width: 100%;
+    }
+
+    .left-container{
+        width: 15%;
+    }
+
+    .right-container{
+        width: 85%;
+    }
+
 }
 
 /* remainings */
